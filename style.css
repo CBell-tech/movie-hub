@@ -1,0 +1,817 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+}
+
+a {
+    text-decoration: none;
+}
+
+.gr1backgndcolour {
+    background-color: black;
+    min-height: 100vh;
+}
+
+.headerbg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    background-color: black;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 20px 50px;
+}
+
+.brandbar {
+    display: contents;
+}
+
+.flex h1 {
+    color: red;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+}
+
+.navi {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: larger;
+}
+
+.navi a {
+    color: white;
+}
+
+.navi a:hover {
+    color: red;
+}
+
+.serch {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: auto;
+    min-height: 40px;
+}
+
+.serchinput {
+    width: 0;
+    min-width: 0;
+    opacity: 0;
+    padding: 8px 0;
+    margin-left: 0;
+    font-size: 16px;
+    color: white;
+    border: 1px solid red;
+    border-radius: 8px;
+    background-color: #222;
+    transition: width 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+}
+
+.serchinput.active {
+    width: 200px;
+    opacity: 1;
+    padding: 8px 12px;
+}
+
+.btn {
+    background: none;
+    border: none;
+    color: gray;
+    cursor: pointer;
+    font-size: 18px;
+    padding-right: 15px;
+}
+
+.g2text {
+    color: white;
+    padding: 170px 20px 20px;
+    text-align: center;
+}
+
+.g2text h1 {
+    display: flex;
+    justify-content: center;
+    font-size: clamp(2.25rem, 5vw, 3.2rem);
+}
+
+.g2text p {
+    display: flex;
+    justify-content: center;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    padding-top: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.g2text button,
+.browse-movies {
+    display: block;
+    width: min(250px, 100%);
+    min-height: 50px;
+    margin: 20px auto 0;
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 8px;
+    line-height: 50px;
+}
+
+.g3text h2 {
+    color: white;
+    font-size: 30px;
+    margin: 100px 50px 0;
+}
+
+.g3text hr {
+    margin: 15px 50px 0;
+    color: red;
+    border-color: red;
+}
+
+.movie-card {
+    position: relative;
+    width: 100%;
+    min-height: 650px;
+    background-color: rgb(39, 38, 38);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(235, 3, 3, 0.45);
+}
+
+.movie-card img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.movie-card .ratingBG {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 8px;
+    background-color: rgba(39, 38, 38, 0.7);
+    padding: 8px 12px;
+    border-radius: 5px;
+    color: yellow;
+}
+
+.movie-card .txt {
+    color: white;
+    margin: 10px 20px;
+    font-size: 22px;
+}
+
+.movie-card .dflx {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 10px 20px;
+}
+
+.date {
+    color: #d3d3d3;
+}
+
+.genree {
+    background-color: rgb(243, 6, 6, 0.3);
+    border-radius: 5px;
+    padding: 3px 5px;
+    color: red;
+}
+
+.movie-card .about {
+    color: white;
+    margin: 20px;
+    line-height: 1.6;
+}
+
+.movie-card .btn {
+    width: calc(100% - 40px);
+    margin: 20px auto;
+    padding: 10px 0;
+    display: block;
+    background: transparent;
+    border: 1px solid red;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.movie-card .btn:hover {
+    background-color: red;
+}
+
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 45px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+
+.movie-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto 24px;
+    padding: 0 50px;
+    color: #ddd;
+}
+
+.movie-controls label {
+    display: grid;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.movie-controls select,
+.movie-controls button {
+    min-height: 44px;
+    padding: 10px 12px;
+    border: 1px solid #666;
+    border-radius: 6px;
+    background: #222;
+    color: #fff;
+    font: inherit;
+    cursor: pointer;
+}
+
+.movie-controls button:hover { background: #a50c0c; }
+.movie-controls :focus-visible { outline: 2px solid #ff7777; outline-offset: 3px; }
+#movie-count { margin: 0 0 12px auto; font-size: 14px; }
+.movie-card[hidden] { display: none !important; }
+
+@media (max-width: 1024px) {
+    .movie-controls { padding: 0 24px; }
+}
+
+@media (max-width: 640px) {
+    .movie-controls { padding: 12px 16px 0; gap: 12px; margin-bottom: 12px; }
+    .movie-controls label { flex: 1 1 120px; min-width: 0; }
+    .movie-controls select { width: 100%; }
+}
+
+.flex4allrol,
+.flex4allrol2,
+.flex4allrol3 {
+    display: contents;
+}
+
+.bottombg {
+    background-color: rgb(20, 18, 18);
+    margin-top: 40px;
+}
+
+.bottomflex {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 80px 50px 0;
+}
+
+.bottomflex h1 {
+    color: red;
+    margin: 0;
+}
+
+.bottomflex a {
+    color: white;
+}
+
+.downnavi {
+    font-size: larger;
+}
+
+.downnavi a:hover,
+.social a:hover {
+    color: red;
+}
+
+.social {
+    display: flex;
+    gap: 20px;
+    font-size: x-large;
+}
+
+.bottomline {
+    margin: 40px 50px 0;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.allrightreserved {
+    display: flex;
+    justify-content: center;
+    color: gray;
+    text-align: center;
+    padding: 0 20px 30px;
+}
+
+.fadeIn {
+    animation: fade 0.4s ease;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+mark {
+    background-color: red;
+    color: white;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+@media (max-width: 1024px) {
+    .movies-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 32px;
+        padding: 0 24px;
+    }
+
+    .flex {
+        padding: 18px 24px;
+        flex-wrap: wrap;
+    }
+
+    .navi {
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+
+    .g2text {
+        padding-top: 200px;
+    }
+
+    .g3text h2 {
+        margin: 80px 24px 0;
+    }
+
+    .g3text hr,
+    .bottomline {
+        margin-left: 24px;
+        margin-right: 24px;
+    }
+
+    .bottomflex {
+        padding: 60px 24px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .movies-grid {
+        gap: 24px;
+        padding: 0 20px;
+    }
+
+    .headerbg {
+        position: static;
+    }
+
+    .flex {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+        padding: 20px;
+    }
+
+    .brandbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .brandbar:has(.serchinput.active) {
+        margin-bottom: 52px;
+    }
+
+    .flex h1 {
+        justify-content: flex-start;
+    }
+
+    .navi {
+        justify-content: center;
+    }
+
+    .serch {
+        position: relative;
+        width: auto;
+        justify-content: flex-end;
+        margin-left: 0;
+        flex-shrink: 0;
+    }
+
+    .serch .btn {
+        padding-right: 0;
+    }
+
+    .serchinput.active {
+        position: absolute;
+        top: calc(100% + 10px);
+        right: 0;
+        width: min(240px, calc(100vw - 40px));
+        z-index: 2;
+    }
+
+    .g2text {
+        padding: 50px 20px 20px;
+    }
+
+    .g3text h2 {
+        font-size: 26px;
+        margin: 50px 20px 0;
+    }
+
+    .g3text hr,
+    .bottomline {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .movie-card {
+        min-height: unset;
+    }
+
+    .movie-card img {
+        height: 250px;
+    }
+
+    .movie-card .dflx {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .bottomflex {
+        padding: 50px 20px 0;
+    }
+
+    .social {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .movies-grid {
+        gap: 16px;
+        padding: 0 16px;
+    }
+
+    .g3text hr,
+    .bottomline {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    .navi {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .serch {
+        justify-content: flex-end;
+    }
+
+    .serchinput.active {
+        width: min(220px, calc(100vw - 32px));
+    }
+
+    .g2text h1 {
+        font-size: 1.9rem;
+    }
+
+    .g2text p {
+        font-size: 1rem;
+    }
+
+    .g2text button {
+        font-size: 18px;
+    }
+
+    .movie-card {
+        border-radius: 16px;
+    }
+
+    .movie-card img {
+        height: 180px;
+    }
+
+    .movie-card .ratingBG {
+        top: 14px;
+        right: 14px;
+        padding: 6px 10px;
+    }
+
+    .movie-card .txt {
+        font-size: 16px;
+    }
+
+    .movie-card .btn {
+        font-size: 14px;
+    }
+
+    .bottomflex {
+        text-align: center;
+        justify-content: center;
+    }
+
+    .social {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    body,
+    .gr1backgndcolour {
+        background: #000;
+    }
+
+    .headerbg {
+        display: block;
+        position: static;
+        border-bottom: 1px solid #222;
+    }
+
+    .flex {
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 0;
+        padding: 4px 14px;
+    }
+
+    .brandbar {
+        display: contents;
+    }
+
+    .flex h1 {
+        color: #f20c0c;
+        order: 1;
+        flex: 0 0 auto;
+        gap: 3px;
+        font-family: Georgia, serif;
+        font-size: 16px;
+        line-height: 1;
+    }
+
+    .serch {
+        order: 3;
+        flex: 0 0 auto;
+        margin-left: 12px;
+        min-height: 34px;
+    }
+
+    .serch .btn {
+        color: #8c8c8c;
+        font-size: 16px;
+    }
+
+    .navi {
+        order: 2;
+        flex: 1 1 auto;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 11px;
+        min-width: 0;
+        margin-left: 16px;
+        font-family: Georgia, serif;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    .navi a {
+        color: #8d31b6;
+    }
+
+    .g2text {
+        display: block;
+        min-height: 212px;
+        padding: 38px 20px 30px;
+        text-align: center;
+    }
+
+    .g2text h1 {
+        display: block;
+        font-family: Georgia, serif;
+        font-size: 24px;
+        line-height: 1.1;
+    }
+
+    .g2text p {
+        display: block;
+        padding-top: 12px;
+        font-family: Georgia, serif;
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 1.3;
+    }
+
+    .browse-movies {
+        width: 130px;
+        min-height: 36px;
+        margin: 16px auto 0;
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        line-height: 36px;
+    }
+
+    .g3text {
+        display: block;
+    }
+
+    .g3text h2 {
+        margin: 0;
+        padding: 15px 16px;
+        color: #fff;
+        background: #090909;
+        font-size: 19px;
+    }
+
+    .g3text hr,
+    .g3text br {
+        display: none;
+    }
+
+    .movies-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        max-width: none;
+        margin: 0;
+        padding: 10px 16px 24px;
+    }
+
+    .flex4allrol,
+    .flex4allrol2,
+    .flex4allrol3 {
+        display: contents;
+    }
+
+    .movie-card,
+    .flex4allrol .movie-card {
+        min-width: 0;
+        min-height: 0;
+        overflow: hidden;
+        border: 1px solid #505050;
+        border-radius: 4px;
+        background: #fff;
+        box-shadow: none;
+    }
+
+    .movie-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .movie-card img {
+        display: block;
+        width: 100%;
+        height: 225px;
+        border-radius: 0;
+        object-fit: cover;
+    }
+
+    .flex4allrol .movie-card img {
+        height: 225px;
+    }
+
+    .movie-card .ratingBG {
+        top: 6px;
+        left: 6px;
+        right: auto;
+        gap: 3px;
+        padding: 3px 5px;
+        border-radius: 2px;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.84);
+    }
+
+    .movie-card .ratingBG h2 {
+        margin: 0;
+        font-size: 11px;
+        line-height: 1.1;
+    }
+
+    .movie-card .ratingBG h2:first-child {
+        color: #ff9d00;
+    }
+
+    .movie-card .txt {
+        margin: 8px 7px 9px;
+        color: #111;
+        font-size: 15px;
+        line-height: 1.25;
+    }
+
+    .movie-card .dflx {
+        display: block;
+        margin: 7px;
+    }
+
+    .movie-card .date,
+    .movie-card .genree {
+        display: inline-block;
+        margin-right: 4px;
+        font-size: 10px;
+        line-height: 1.2;
+    }
+
+    .movie-card .date {
+        color: #737373;
+    }
+
+    .movie-card .genree {
+        padding: 2px 4px;
+        border-radius: 2px;
+        color: #fff;
+        background: #a50c0c;
+    }
+
+    .movie-card .about {
+        display: none;
+    }
+
+    .movie-card .btn {
+        display: block;
+        width: calc(100% - 14px);
+        min-height: 44px;
+        margin: 10px 7px;
+        padding: 12px 4px;
+        background-color: #a50c0c;
+        color: #fff;
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .movie-card .btn.is-clicked {
+        background-color: #f2b3b3;
+        border-color: #f2b3b3;
+        color: #651515;
+    }
+
+    .movie-card.portrait-card,
+    .flex4allrol2 .movie-card,
+    .flex4allrol3 .movie-card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .movie-card.portrait-card img,
+    .flex4allrol2 .movie-card img,
+    .flex4allrol3 .movie-card img {
+        aspect-ratio: 2 / 3;
+        height: auto;
+    }
+
+    .bottombg {
+        margin-top: 0;
+    }
+}

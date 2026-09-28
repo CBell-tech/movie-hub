@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie details | MoviesHub</title>
+    <link rel="stylesheet" href="details.css">
+    <script src="movies-data.js" defer></script>
+    <script src="details.js" defer></script>
+</head>
+<body>
+    <header><a class="brand" href="index.html">MoviesHub</a></header>
+    <main>
+        <a class="back" href="index.html">&larr; Back to movies</a>
+        <article id="movie-details" hidden>
+            <img id="poster" alt="">
+            <div class="content">
+                <p class="eyebrow">MOVIESHUB COLLECTION</p>
+                <h1 id="movie-title"></h1>
+                <dl>
+                    <div><dt>Year</dt><dd id="year"></dd></div>
+                    <div><dt>Genre</dt><dd id="genre"></dd></div>
+                    <div><dt>Rating</dt><dd id="rating"></dd></div>
+                </dl>
+                <h2>About this title</h2>
+                <p id="description"></p>
+                <section class="download-section" aria-labelledby="download-heading">
+                    <h2 id="download-heading">Download</h2>
+                    <a id="download-link" class="download-button" download hidden>Download</a>
+                    <button id="download-unavailable" class="download-button" disabled>Download unavailable</button>
+                    <p id="download-note">A download link hasn’t been added yet. Please check back later.</p>
+                </section>
+            </div>
+        </article>
+        <section id="not-found" hidden>
+            <h1>Movie not found</h1>
+            <p>Choose a title from the movie collection to see its details.</p>
+        </section>
+        <noscript>Please enable JavaScript to view the movie details.</noscript>
+    </main>
+</body>
+</html>

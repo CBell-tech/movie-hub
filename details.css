@@ -1,0 +1,32 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #090909; color: #fff; font-family: Arial, sans-serif; }
+a { color: inherit; text-decoration: none; }
+header { padding: 24px max(20px, calc((100% - 1100px) / 2)); border-bottom: 1px solid #292929; }
+.brand { color: #ff3333; font-size: 26px; font-weight: 700; }
+main { max-width: 1140px; margin: auto; padding: 28px 20px 60px; }
+.back { display: inline-block; padding: 12px 0; margin-bottom: 24px; color: #ddd; }
+.back:hover { color: #ff7777; }
+article { display: grid; grid-template-columns: minmax(220px, 340px) minmax(0, 1fr); gap: 40px; align-items: start; }
+#poster { width: 100%; border-radius: 14px; }
+.content { padding: 12px 0; }
+.eyebrow { color: #ff7777; font-size: 12px; letter-spacing: 2px; font-weight: 700; }
+h1 { font-size: clamp(28px, 5vw, 44px); line-height: 1.15; margin: 12px 0 24px; }
+h2 { font-size: 21px; margin: 0 0 12px; }
+dl { display: flex; flex-wrap: wrap; gap: 20px 32px; margin: 0 0 32px; }
+dt { color: #aaa; font-size: 12px; margin-bottom: 6px; }
+dd { margin: 0; line-height: 1.5; }
+#description, #not-found p { color: #ddd; line-height: 1.8; }
+.download-section { margin-top: 32px; padding: 24px; background: #1c1c1c; border: 1px solid #333; border-radius: 12px; }
+.download-button { display: inline-block; padding: 14px 24px; min-height: 48px; background: #a50c0c; color: #fff; border: none; border-radius: 6px; font: 700 16px Arial, sans-serif; text-align: center; }
+.download-button:hover { background: #d01414; }
+.download-button:disabled { background: #533030; color: #e2bcbc; cursor: not-allowed; }
+#download-note { margin: 14px 0 0; color: #bbb; font-size: 14px; line-height: 1.6; }
+a:focus-visible { outline: 3px solid #ff9999; outline-offset: 5px; }
+[hidden] { display: none !important; }
+@media (max-width: 640px) {
+    article { grid-template-columns: 1fr; gap: 20px; }
+    #poster { max-width: 300px; justify-self: center; }
+    .content { padding: 0; }
+    .download-section { padding: 20px; }
+    .download-button { width: 100%; }
+}

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head><link rel="stylesheet" href="style.css">
+<body><script src="script.js"></script>
+    <nav class="gr1backgndcolour">
+        <div class="headerbg">
+            <div class="flex">
+                <div class="brandbar">
+                <h1><i class="fa-solid fa-film"></i>MoviesHub</h1>
+                
+                <div class="serch">
+                    <button class="btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input id="movie-search" type="text" placeholder="Search movies..." class="serchinput">
+                </div>
+                </div>
+
+                <div class="navi">
+                    <a href="">Home</a>
+                    <a href="">Movies</a>
+                    <a href="">Genres</a>
+                    <a href="">About</a>
+                </div><!-- end of navi -->
+            </div> <!-- end of flex -->
+        </div> <!-- end of headerbg -->
+        
+        <div class="g2text">
+            <h1>Discover Amazing Movies</h1>
+            <p>Explore our collection of the best films from around the world</p>
+            <a class="browse-movies" href="#movie-search">Browse Movies <i class="fa-solid fa-arrow-right"></i></a>
+        </div> <!-- end of g2text -->
+
+        <div class="g3text">
+            <h2>Popular Movies</h2>
+            <hr><br>
+        </div>
+
+        <div class="movie-controls">
+            <label for="genre-filter">Genre
+                <select id="genre-filter"><option value="">All genres</option></select>
+            </label>
+            <label for="movie-sort">Sort by
+                <select id="movie-sort">
+                    <option value="default">Featured</option>
+                    <option value="newest">Newest first</option>
+                    <option value="oldest">Oldest first</option>
+                    <option value="rating">Highest rated</option>
+                </select>
+            </label>
+            <button id="reset-filters" type="button">Reset filters</button>
+            <p id="movie-count" role="status" aria-live="polite"></p>
+        </div>
+        <div class="movies-grid">
+        <div class="flex4allrol"> 
+            <!-- movie-card 1 -->
+            <div class="movie-card">
+                <div class="ratingBG">
+                    <h2><i class="fa-solid fa-star"></i></h2>
+                    <h2>8.2</h2>
+                </div>
+                <img src="pictures/the killers game.jpg" alt="">
+                <h2 class="txt">Killer Game</h2>
+                
+                <div class="dflx">
+                    <div class="date"><p>2024</p></div>
+                    <div class="genree"><p>Action, Thriller</p></div>
+                </div>
+                
+                <p class="about">A hitman puts a bounty on himself but can’t call it off in time. Now every assassin is after him, and survival is his only mission.</p>
+                <!-- <button><h3>View details <i class="fa-solid fa-angle-right"></i></h3></button> -->
+                <a href="details.html?movie=killer-game" class="btn">View details<i class="fa-solid fa-angle-right"></i></a>
+
+            </div>
+
+             
+            <!-- movie-card 2 -->
+            <div class="movie-card">
+                <div class="ratingBG">
+                    <h2><i class="fa-solid fa-star"></i></h2>
+                    <h2>6.5</h2>
+                </div>
+
+                <img src="pictures/atlas.jpg" alt="">
+                <h2 class="txt">Atlas</h2>
+                <div class="dflx">
+                    <div class="date"><p>2024</p></div>
+                    <div class="genree"><p>Action</p></div>
+                </div>
+                
+                <p class="about">A brilliant data analyst must trust an AI she fears to save humanity. Together, they battle a rogue robot uprising that threatens the world.</p>
+                <a href="details.html?movie=atlas" class="btn">View details<i class="fa-solid fa-angle-right"></i></a>
+            </div>
+
+
+
+               <!-- movie-card 3 -->
+            <div class="movie-card">
+                <div class="ratingBG">
+                    <h2><i class="fa-solid fa-star"></i></h2>
+                    <h2>4.5</h2>
+                </div>
+                <img src="pictures/dirty angels.jpg" alt="">
+                <h2 class="txt">Dirty angels</h2>
+                
+                <div class="dflx">
+                    <div class="date"><p>2024</p></div>
+                    <div class="genree"><p>Action</p></div>
+                </div>
+                
+                <p class="about">A group of female soldiers is sent on a secret rescue mission in war-torn Syria. But when the operation goes wrong, they must fight their way out to survive.</p>
+                <a href="details.html?movie=dirty-angels" class="btn">View details<i class="fa-solid fa-angle-right"></i></a>
+            </div>
+
+        
+        </div> <!-- end of flex4allrol -->
+
+        <div class="flex4allrol2">
+            <!-- movie-card 4 -->
+             <div class="movie-card">
+                <div class="ratingBG">
+                    <h2><i class="fa-solid fa-star"></i></h2>
+                    <h2>8.2</h2>
+                </div>
+                <img src="pictures/war 2.jpg" alt="">
+                <h2 class="txt">War 2</h2>
+                
+                <div class="dflx">
+                    <div class="date"><p>2025</p></div>
+                    <div class="genree"><p>Action, Thriller</p></div>
+                </div>
+                
+                <p class="about">Working as a mercenary, Kabir accepts a high-risk mission for a criminal network. But soon, his task pits him against his unflinching former ally.</p>
+                <a href="details.html?movie=war-2" class="btn">View details<i class="fa-solid fa-angle-right"></i></a>
+            </div>
+
+             
+            <!-- movie-card 5 -->
+            <div class="movie-card">
+                <div class="ratingBG">
+                    <h2><i class="fa-solid fa-star"></i></h2>
+                    <h2>7.6</h2>
+                </div>
+                
+                <img src="pictures/high_potential_ver3.jpg" alt="">
+                <h2 class="txt">High potential</h2>
+                
+                <div class="dflx">
+                    <div class="date"><p>2024</p></div>
+                    <div class="genree"><p>Drama</p></div>
+                </div>
+                
+                <p class="about">A single mom with three kids and an exceptional mind, helps solve an unsolvable crime when she rearranges some evidence during her shift as a cleaner.</p>
+                <a href="details.html?movie=high-potential" class="btn">View details<i class="fa-solid fa-angle-right"></i></a>
+            </div>
+
+
+            
+             
+            <!-- movie-card 6 -->
+            <div class="movie-card">
+                <div class="ratingBG">
+                    <h2><i class="fa-solid fa-star"></i></h2>
+                    <h2>7.2</h2>
+                </div>
+                <img src="pictures/mission_impossible__the_final_reckoning.jpg" alt="">
+                <h2 class="txt">Mission Impossible</h2>
+                
+                <div class="dflx">
+                    <div class="date"><p>2025</p></div>
+                    <div class="genree"><p>Action, Drama</p></div>
+                </div>
+                
+                <p class="about">Hunt and the IMF pursue a dangerous AI called the Entity that's infiltrated global intelligence. With governments and a figure from his past in pursuit.</p>
+                <a href="details.html?movie=mission-impossible" class="btn">View details<i class="fa-solid fa-angle-right"></i></a>
+            </div>
+
+        </div><!-- end of flex4allrol2 -->
+        
+        
+        
+        <div class="flex4allrol3">
+            <!-- movie-card 7 -->
+            <div class="movie-card">
+                <div class="ratingBG">
+                    <h2><i class="fa-solid fa-star"></i></h2>
+                    <h2>7.1</h2>
+                </div>
+                <img src="pictures/bad_guys_two.jpg" alt="">
+                <h2 class="txt">Bad guys 2</h2>
+                
+                <div class="dflx">
+                    <div class="date"><p>2025</p></div>
+                    <div class="genree"><p>Animation,Action,Comedy</p></div>
+                </div>
+                
+                <p class="about">When suspicious robberies begin to occur, they get coerced and reunite once again to pull off an immense heist, but this time with a band of female thieves.</p>
+                <a href="details.html?movie=bad-guys-2" class="btn">View details<i class="fa-solid fa-angle-right"></i></a>
+
+            </div>
+              
+
+
+
+            <!-- movie-card 8 -->
+            <div class="movie-card">
+                <div class="ratingBG">
+                    <h2><i class="fa-solid fa-star"></i></h2>
+                    <h2>7.4</h2>
+                </div>
+                <img src="pictures/devil may cry.jpg" alt="">
+                <h2 class="txt">Devil may cry</h2>
+                
+                <div class="dflx">
+                    <div class="date"><p>2025</p></div>
+                    <div class="genree"><p> Animation, Action</p></div>
+                </div>
+                
+                <p class="about">When a mysterious villain threatens to open the gates of Hell, a devilishly handsome demon hunter could be the world's best hope for salvation.</p>
+                <a href="details.html?movie=devil-may-cry" class="btn">View details<i class="fa-solid fa-angle-right"></i></a>
+
+            </div>
+            
+
+
+            <!-- movie-card 9 -->
+            <div class="movie-card">
+                <div class="ratingBG">
+                    <h2><i class="fa-solid fa-star"></i></h2>
+                    <h2>5.5</h2>
+                </div>
+                <img src="pictures/predator_killer_of_killers.jpg" alt="">
+                <h2 class="txt">Predator killer of killers</h2>
+                
+                <div class="dflx">
+                    <div class="date"><p>2025</p></div>
+                    <div class="genree"><p> Animation, Action</p></div>
+                </div>
+                
+                <p class="about">A Viking raider, a ninja in feudal Japan, and a World War II pilot encounter a fierce intergalactic hunter.</p>
+                <a href="details.html?movie=predator-killer-of-killers" class="btn">View details<i class="fa-solid fa-angle-right"></i></a>
+
+            </div>
+        
+        
+        </div><!-- end of flex4allrol3 -->
+        </div><br><br> <!-- end of movies-grid -->
+        
+        
+           <p id="noResults" style="display:none; text-align:center; color:white; font-size:20px; margin-top:20px;">
+          No movies found. Try another search or reset the filters.</p>
+
+        
+        
+        <div class="bottombg">
+            <div class="bottomflex">
+                <h1><i class="fa-solid fa-film"></i>Movies Hub</h1>
+                <div class="downnavi">
+                    <p><a href="">About Us</a></p><br>
+                    <p><a href="">Contact</a></p><br>
+                    <p><a href="">Term of Use</a></p><br>
+                    <p><a href="">Private Policy</a></p>
+                </div><!-- end of downnavi -->
+                
+                
+                <div class="social">
+                    <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com"><i class="fa-brands fa-youtube"></i></a>
+                </div> <!-- end of social -->
+            </div><br><br> <!-- end of bottomflex -->
+
+            <hr class="bottomline"><br><br>
+            
+            <div class="allrightreserved">
+                <p>© 2025 MovieHub created by Charles. All rights reserved.</p>
+            </div><br><br>
+        </div> <!-- end of bottombg -->
+
+    </nav><!-- end of gr1backgndcolour -->
+    
+    
+    
+    
+    <script>
+    // Toggle search input when clicking button
+    const searchBtn = document.querySelector(".serch .btn");
+    const searchInput = document.querySelector(".serchinput");
+    const browseMovies = document.querySelector(".browse-movies");
+
+    document.querySelectorAll(".movie-card .btn").forEach(button => {
+        const visitedKey = `viewed:${button.getAttribute("href")}`;
+        try {
+            if (sessionStorage.getItem(visitedKey)) button.classList.add("is-clicked");
+        } catch (_) { /* Click feedback still works when storage is unavailable. */ }
+        button.addEventListener("click", (event) => {
+            // Keep placeholder links from reloading the page.
+            if (!button.getAttribute("href")) event.preventDefault();
+            button.classList.add("is-clicked");
+            try { sessionStorage.setItem(visitedKey, "true"); } catch (_) {}
+        });
+    });
+
+    searchBtn.addEventListener("click", () => {
+    searchInput.classList.toggle("active");
+    searchInput.focus();
+  });
+
+    browseMovies.addEventListener("click", (event) => {
+    event.preventDefault();
+    searchInput.classList.add("active");
+    searchInput.focus();
+  });
+
+
+</script>
+
+
+
+
+
+
+
+    
+<script src="filters.js"></script>
+</body>
+</html>
